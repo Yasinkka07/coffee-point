@@ -3,7 +3,6 @@ import { useState } from 'react'
 const NAV = [
   { href: '#about', label: 'О нас' },
   { href: '#menu', label: 'Меню' },
-  { href: '#gallery', label: 'Галерея' },
   { href: '#reviews', label: 'Отзывы' },
   { href: '#contact', label: 'Контакты' },
 ]
@@ -17,15 +16,6 @@ const MENU = [
   { name: 'Какао', desc: 'Горячий шоколад с маршмеллоу', price: 1100 },
   { name: 'Круассан', desc: 'Слоёный, со сливочным маслом', price: 900 },
   { name: 'Чизкейк', desc: 'Нью-Йорк, с ягодным соусом', price: 1600 },
-]
-
-const GALLERY = [
-  { title: 'Зал у окна', from: '#f6d365', to: '#fda085' },
-  { title: 'Бариста за работой', from: '#a18cd1', to: '#fbc2eb' },
-  { title: 'Свежая выпечка', from: '#fccb90', to: '#d57eeb' },
-  { title: 'Летняя терраса', from: '#84fab0', to: '#8fd3f4' },
-  { title: 'Латте-арт', from: '#ffecd2', to: '#fcb69f' },
-  { title: 'Вечер в кофейне', from: '#667eea', to: '#764ba2' },
 ]
 
 const REVIEWS = [
@@ -132,26 +122,9 @@ function Menu() {
   )
 }
 
-function Gallery() {
-  return (
-    <section id="gallery" className="section">
-      <div className="container">
-        <h2 className="section__title">Галерея</h2>
-        <div className="grid grid--3">
-          {GALLERY.map((g) => (
-            <figure key={g.title} className="photo" style={{ background: `linear-gradient(135deg, ${g.from}, ${g.to})` }}>
-              <figcaption>{g.title}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Reviews() {
   return (
-    <section id="reviews" className="section section--alt">
+    <section id="reviews" className="section">
       <div className="container">
         <h2 className="section__title">Отзывы</h2>
         <div className="grid grid--3">
@@ -186,7 +159,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section section--alt">
       <div className="container contact">
         <div>
           <h2 className="section__title">Контакты</h2>
@@ -242,7 +215,6 @@ export default function App() {
         <Hero />
         <About />
         <Menu />
-        <Gallery />
         <Reviews />
         <Contact />
       </main>
